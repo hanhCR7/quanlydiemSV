@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Confirm Delete</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Xác nhận xóa sinh viên</h1>
+        <p class="lead text-center">Bạn có chắc chắn muốn xóa sinh viên này không?</p>
+        <form action="{{ url_for('delete_student', student_id=student.id) }}" method="post" class="text-center">
+            <button type="submit" class="btn btn-outline-danger btn-lg me-2">Xóa</button>
+            <a href="{{ url_for('svlist') }}" class="btn btn-outline-info btn-lg me-2">Hủy</a>
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

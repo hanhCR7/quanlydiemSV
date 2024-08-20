@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Kiếm sinh viên</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Tìm kiếm sinh viên trong danh sách</h1>
+    <form method="POST" action="{{ url_for('search') }}" class="mb-4">
+        <div class="form-group">
+            <label for="search_term">Tìm kiếm:</label>
+            <input type="text" name="search_term" id="search_term" class="form-control" placeholder="Nhập tên, mssv, ....">
+        </div>
+        <button type="submit" class="btn btn-outline-light btn-lg me-2">Search</button>
+    </form>
+    {% if students %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>MSSV</th>
+                    <th>Tuổi</th>
+                    <th>Giới tính</th>
+                    <th>Chuyên ngành</th>
+                    <th>Điểm</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.student_code }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.gender }}</td>
+                        <td>{{ student.major }}</td>
+                        <td>{{ student.score }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No matching students found.</p>
+    {% endif %}
+    <a href="{{ url_for('svlist') }}" class="btn btn-secondary btn-lg me-2">Quay lại</a>   
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

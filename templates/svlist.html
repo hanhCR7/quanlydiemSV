@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Quản lý sinh viên</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Quản lý điểm sinh viên</h1>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>MSSV</th>
+                    <th>Chuyên ngành</th>
+                    <th>Điểm</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ (student.id) }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.student_code }}</td>
+                    <td>{{ student.major }}</td>
+                    <td>{{ student.score }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_student', student_id=student.id) }}" class="btn btn-primary btn-sm">Sửa</a>
+                        <a href="{{ url_for('delete_student', student_id=student.id) }}" class="btn btn-danger btn-sm delete-btn">Xóa</a>
+                    </td>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="{{ url_for('add_student') }}" method="post" class="mt-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Tên sinh viên:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="student_code">Mã Sinh Viên:</label>
+                    <input type="text" id="student_code" name="student_code" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="age">Tuổi:</label>
+                    <input type="text" id="age" name="age" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gender">Giới tính:</label>
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="Nam" selected>Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="major">Khoa CNTT(Chuyên ngành):</label>
+                    <select id="major" name="major" class="form-control">
+                        <option value="Khoa học máy tính" selected>Khoa học máy tính</option>
+                        <option value="Hệ thống thông tin">Hệ thống thông tin</option>
+                        <option value="Mạng máy tính">Mạng máy tính</option>
+                        <option value="Tin học kinh tế">Tin học kinh tế</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="score">Điểm:</label>
+                    <input type="text" id="score" name="score" class="form-control" required>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <button type="submit" class="btn btn-success btn-lg me-2">Thêm</button>
+                    <a href="{{ url_for('home') }}" class="btn btn-secondary btn-lg me-2">Quay lại</a>
+                </div>
+                <div class="ms-auto">
+                    <a href="{{ url_for('search') }}" class="btn btn-outline-dark btn-lg me-2">Tìm kiếm</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="/static/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

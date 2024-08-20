@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+
+<body>
+    <header>
+        <h1>Bài tập nhóm 20</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Trang chủ</a></li>
+            <li><a href="{{ url_for('svlist') }}">Quản lý sinh viên</a></li>
+            <li><a href="#">Quản lý luận văn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <a href="{{ url_for('home') }}">
+                <h2>Trang chủ</h2>
+            </a>
+            <p>Phần quản lý điểm sinh viên là một thành phần quan trọng trong hệ thống thông tin của các trường đại học và cao
+                đẳng.
+                Được thiết kế để hiện đại hóa quá trình quản lý thông tin học tập, phần này mang lại nhiều lợi ích cho cả sinh viên
+                và
+                cơ sở giáo dục.</p>
+            <p>Phần quản lý điểm số trong hệ thống sinh viên đóng vai trò quan trọng, là nguồn thông tin không thể thiếu đối với cả
+                sinh viên và giáo viên. Điểm số không chỉ là con số phản ánh hiệu suất học tập mà còn là công cụ hỗ trợ quyết định
+                và
+                thúc đẩy sự phát triển cá nhân. Sinh viên có khả năng theo dõi chặt chẽ điểm số của mình, từng chi tiết điểm của
+                từng
+                môn học, giúp họ đưa ra chiến lược học tập hiệu quả.</p>
+            <p>Đối với giáo viên, phần quản lý điểm số không chỉ là công cụ nhập điểm mà còn là nguồn dữ liệu quan trọng để đánh
+                giá
+                hiệu suất lớp học và đưa ra những quyết định đúng đắn về phương pháp giảng dạy. Tính minh bạch và truy cập dễ dàng
+                giúp
+                cả giáo viên và sinh viên tương tác một cách thuận tiện, tạo nên một môi trường học tập hiệu quả và minh bạch.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="grid">
+            <div class="grid_row-1">
+                <div class="grid_column-2-4">
+                    <h3 class="footer_heading">Userful Link</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-info-circle footer-item_icon"></i>About Us</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-envelope footer-item_icon"></i>Contact US</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-briefcase footer-item_icon"></i>Careers</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-lock footer-item_icon"></i>Privacy Policy</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-file-text footer-item_icon"></i>Terms & Condition</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_column-2-4">
+                    <h3 class="footer_heading">Help & Support</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-question-circle footer-item_icon"></i>FAQ</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-life-ring footer-item_icon"></i>Get Help</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-headphones footer-item_icon"></i>Customer Support</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_column-2-4">
+                    <h3 class="footer_heading">User</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-user footer-item_icon"></i>Phạm Ngọc Anh</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-user footer-item_icon"></i>Nguyễn Hồ Việt Anh</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-user footer-item_icon"></i>Đỗ Xuân Hạnh</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item_link"><i class="fa fa-user footer-item_icon"></i>Nguyễn Hữu Quý</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_column-2-4">
+                    <h3 class="footer_heading">Theo dõi chúng tôi trên</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item footer-social">
+                            <i class="fa fa-facebook footer-item_icon"></i>
+                            <a href="#" class="footer-item_link">Facebook</a>
+                        </li>
+                        <li class="footer-item footer-social">
+                            <i class="fa fa-instagram footer-item_icon"></i>
+                            <a href="#" class="footer-item_link">Instagram</a>
+                        </li>
+                        <li class="footer-item footer-social">
+                            <i class="fa fa-youtube footer-item_icon"></i>
+                            <a href="#" class="footer-item_link">Youtube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

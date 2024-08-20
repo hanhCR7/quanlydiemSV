@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Edit Student</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Chỉnh sửa thông tin sinh viên</h1>
+
+        <!-- Form for Editing Students -->
+        <form action="{{ url_for('edit_student', student_id=student.id) }}" method="post" class="mt-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Tên sinh viên:</label>
+                    <input type="text" id="name" name="name" class="form-control" value="{{ student.name }}" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="student_code">Mã Sinh Viên:</label>
+                    <input type="text" id="student_code" name="student_code" class="form-control" value="{{ student.student_code }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="age">Tuổi:</label>
+                    <input type="text" id="age" name="age" class="form-control" value="{{ student.age }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gender">Giới tính:</label>
+                    <select id="gender" name="gender" class="form-control">
+                            <option value="Nam" {% if student.gender == 'Nam' %}selected{% endif %}>Nam</option>
+                            <option value="Nữ" {% if student.gender == 'Nữ' %}selected{% endif %}>Nữ</option>
+                            <option value="Khác" {% if student.gender == 'Khác' %}selected{% endif %}>Khác</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="major">Khoa CNTT(Chuyên ngành):</label>
+                    <select id="major" name="major" class="form-control">
+                        <option value="Khoa học máy tính" {% if student.major == 'Khoa học máy tính' %}selected{% endif %}>Khoa học máy tính</option>
+                        <option value="Hệ thống thông tin" {% if student.major == 'Hệ thống thông tin' %}selected{% endif %}>Hệ thống thông tin</option>
+                        <option value="Mạng máy tính" {% if student.major == 'Mạng máy tính' %}selected{% endif %}>Mạng máy tính</option>
+                        <option value="Tin học kinh tế" {% if student.major == 'Tin học kinh tế' %}selected{% endif %}>Tin học kinh tế</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="score">Điểm:</label>
+                    <input type="text" id="score" name="score" class="form-control" value="{{ student.score }}" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg me-2">Lưu thay đổi</button>
+            <a href="{{ url_for('svlist') }}" class="btn btn-secondary btn-lg me-2">Quay lại</a>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and other scripts if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
